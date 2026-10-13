@@ -1,0 +1,166 @@
+/* Dashboard Layout */
+body {
+    background-color: #f4f6f9;
+    font-family: 'Inter', Roboto, sans-serif;
+    color: #333;
+    overflow-x: hidden;
+}
+
+.wrapper {
+    display: flex;
+    width: 100%;
+}
+
+/* Sidebar */
+#sidebar {
+    width: 250px;
+    height: 100vh;
+    background: #1e293b; /* Dark neutral base */
+    color: #fff;
+    transition: all 0.3s;
+    position: fixed;
+    z-index: 999;
+}
+
+#sidebar .sidebar-header {
+    padding: 20px;
+    background: #0f172a;
+    border-bottom: 1px solid #334155;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: #f8fafc;
+}
+
+#sidebar ul.components {
+    padding: 20px 0;
+}
+
+#sidebar ul li a {
+    padding: 12px 20px;
+    font-size: 1rem;
+    display: block;
+    color: #cbd5e1;
+    transition: 0.2s;
+}
+
+#sidebar ul li a:hover {
+    color: #fff;
+    background: #334155;
+    border-left: 4px solid #3b82f6; /* Blue highlight */
+}
+
+#sidebar ul li.active > a,
+a[aria-expanded="true"] {
+    color: #fff;
+    background: #334155;
+    border-left: 4px solid #f97316; /* Orange highlight for active */
+}
+
+#sidebar ul li a i {
+    margin-right: 10px;
+    width: 20px;
+    text-align: center;
+}
+
+/* Page Content */
+#content {
+    width: calc(100% - 250px);
+    margin-left: 250px;
+    min-height: 100vh;
+    transition: all 0.3s;
+}
+
+/* Top Navbar */
+.top-navbar {
+    background: #fff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Cards & Tables */
+.card-custom {
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    background: #fff;
+    margin-bottom: 24px;
+}
+
+.card-header-garage {
+    background: #0f172a;
+    color: #fff;
+    border-top-left-radius: 10px !important;
+    border-top-right-radius: 10px !important;
+    padding: 15px 20px;
+}
+
+.table-garage th {
+    background-color: #f8fafc;
+    color: #475569;
+    font-weight: 600;
+    border-bottom: 2px solid #e2e8f0;
+}
+
+.table-garage td {
+    vertical-align: middle;
+}
+
+/* Buttons */
+.btn-garage-primary {
+    background-color: #3b82f6;
+    color: #fff;
+}
+.btn-garage-primary:hover {
+    background-color: #2563eb;
+    color: #fff;
+}
+
+.btn-garage-accent {
+    background-color: #f97316;
+    color: #fff;
+}
+.btn-garage-accent:hover {
+    background-color: #ea580c;
+    color: #fff;
+}
+
+/* Status Colors (Overrides/Additions to MDBootstrap) */
+.badge-secondary { background-color: #64748b !important; color: white !important;} /* Pending */
+.badge-info      { background-color: #3b82f6 !important; color: white !important;} /* Approved */
+.badge-primary   { background-color: #8b5cf6 !important; color: white !important;} /* Assigned */
+.badge-warning   { background-color: #f97316 !important; color: white !important;} /* In Progress */
+.badge-success   { background-color: #10b981 !important; color: white !important;} /* Completed */
+
+/* Login/Signup forms */
+.auth-wrapper {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #0f172a;
+}
+.auth-card {
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
+
+@media (max-width: 768px) {
+    #sidebar {
+        margin-left: -250px;
+    }
+    #sidebar.active {
+        margin-left: 0;
+    }
+    #content {
+        width: 100%;
+        margin-left: 0;
+    }
+    #content.active {
+        margin-left: 250px;
+    }
+}
