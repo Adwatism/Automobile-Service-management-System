@@ -1,1 +1,2 @@
 # Automobile-Service-management-System
+A web-based application designed to simplify and manage vehicle servicing. It allows customers to register vehicles, book services, and track service status, while administrators manage bookings, surveyors inspect vehicles, and mechanics handle service operations. The system maintains vehicle details, inspection reports, mechanic attendance, and service history in one place.
